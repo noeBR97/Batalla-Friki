@@ -1,4 +1,4 @@
-import { IsString, IsInt, IsPositive, IsIn } from "class-validator";
+import { IsString, IsInt, IsPositive } from "class-validator";
 
 export class CreateUsuarioDto {
     @IsInt()

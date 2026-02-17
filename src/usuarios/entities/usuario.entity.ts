@@ -3,9 +3,6 @@ import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose";
 
 @Schema({ collection: 'usuarios' })
 export class Usuario extends Document { 
-    @Prop({ unique: true, index: true })
-    id: number
-
     @Prop({ required: true })
     nombre: string
 
@@ -26,6 +23,9 @@ export class Usuario extends Document {
 
     @Prop()
     batallas_perdidas: number
+
+    @Prop({required: true, default: 'USER'})
+    role: string
 }
 
 export const UsuarioSchema = SchemaFactory.createForClass(Usuario)

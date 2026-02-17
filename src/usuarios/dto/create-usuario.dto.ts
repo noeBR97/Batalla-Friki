@@ -1,10 +1,6 @@
 import { IsString, IsInt, IsPositive } from "class-validator";
 
 export class CreateUsuarioDto {
-    @IsInt()
-    @IsPositive()
-    id: number
-
     @IsString()
     nombre: string
 
@@ -25,4 +21,7 @@ export class CreateUsuarioDto {
 
     @IsInt()
     batallas_perdidas: number
+
+    @IsString()
+    role: string
 }

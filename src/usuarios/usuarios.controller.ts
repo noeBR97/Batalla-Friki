@@ -35,7 +35,7 @@ export class UsuariosController {
 
   @Get(':id')
   @HttpCode(HttpStatus.OK)  // Cambia el código de estado de la respuesta
-  findOne(@Param('id', ParseIntPipe) id: number) {
+  findOne(@Param('id', ParseIntPipe) id: string) {
       return this.usersService.findOne(id);
   }
 

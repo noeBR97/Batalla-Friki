@@ -2,7 +2,7 @@ import { BadRequestException, Injectable, InternalServerErrorException, NotFound
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
 import { Usuario } from './entities/usuario.entity';
-import { Model } from 'mongoose';
+import { Model, Types } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
@@ -35,8 +35,8 @@ export class UsuariosService {
     return `This action returns all usuarios`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} usuario`;
+  findOne(id: string) {
+    return this.usuarioModel.findById(id)
   }
 
   update(id: number, updateUsuarioDto: UpdateUsuarioDto) {
@@ -45,5 +45,25 @@ export class UsuariosService {
 
   remove(id: number) {
     return `This action removes a #${id} usuario`;
+  }
+
+  async addExperiencia(id: string, xp: number) {
+    const usuario = await this.usuarioModel.findById(id)
+
+    if (!usuario) {
+      throw new NotFoundException('Usuario no encontrado')
+    }
+
+    usuario.experiencia = usuario.experiencia + xp
+
+    //subida de nivel
+    while(usuario.experiencia >= 100) {
+      usuario.experiencia = usuario.experiencia - 100
+      usuario.nivel + 1
+    }
+
+    await usuario.save()
+
+    return usuario
   }
 }

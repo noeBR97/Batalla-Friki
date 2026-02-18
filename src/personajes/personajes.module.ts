@@ -16,6 +16,7 @@ import { AuthModule } from 'src/auth/auth.module';
         },
       ]),
       AuthModule
-    ]
+  ],
+  exports: [PersonajesService]
 })
 export class PersonajesModule {}

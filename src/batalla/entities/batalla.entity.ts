@@ -1,5 +1,6 @@
 import mongoose, { Document, Types } from "mongoose";
 import { Schema, SchemaFactory, Prop } from "@nestjs/mongoose";
+import { Personaje } from "src/personajes/entities/personaje.entity";
 
 @Schema({ collection: 'batallas' })
 export class Batalla extends Document {
@@ -10,10 +11,10 @@ export class Batalla extends Document {
     usuario2: Types.ObjectId
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Personaje', required: true })
-    personaje1: Types.ObjectId
+    personaje1: mongoose.Types.ObjectId | Personaje
 
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Personaje', required: true })
-    personaje2: Types.ObjectId
+    personaje2: mongoose.Types.ObjectId | Personaje
 
     @Prop()
     vida_actual_personaje1: number

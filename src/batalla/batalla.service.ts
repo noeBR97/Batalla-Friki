@@ -7,6 +7,7 @@ import { Personaje } from 'src/personajes/entities/personaje.entity';
 import { Batalla } from './entities/batalla.entity';
 import { UsuariosService } from 'src/usuarios/usuarios.service';
 import { PersonajesService } from 'src/personajes/personajes.service';
+import { Server } from 'socket.io';
 
 @Injectable()
 export class BatallaService {
@@ -64,25 +65,53 @@ export class BatallaService {
             logs: []
         })
 
-        return await this.ejecutarBatalla(batalla, personaje1, personaje2)
+        return batalla
     }
 
-    async ejecutarBatalla(batalla: Batalla, p1: Personaje, p2: Personaje) {
+    async ejecutarBatallaTiempoReal(idBatalla: string, io: Server) {
+        const batalla = await this.batallaModel.findById(idBatalla)
+            .populate('personaje1')
+            .populate('personaje2')
+
+        if(!batalla) {
+            throw new NotFoundException('Batalla no encontrada')
+        }
+
+        const p1 = batalla.personaje1 as Personaje
+        const p2 = batalla.personaje2 as Personaje
+
         let vidaP1 = p1.vida
         let vidaP2 = p2.vida
         const logs: string[] = []
-        let salir: boolean = false
 
         while (vidaP1 > 0 && vidaP2 > 0) {
+            await new Promise(res => setTimeout(res, 1500)) //hacemos una espera de 1,5 segundos
+
             //golpea p1
-            vidaP2 = Math.max(vidaP2 - p1.ataque) //si se queda en negativo, lo deja en 0
-            logs.push(`Personaje 1 golpea y deja a Personaje 2 en ${Math.max(vidaP2, 0)}`) 
+            vidaP2 = Math.max(vidaP2 - p1.ataque, 0) //si se queda en negativo, lo deja en 0
+
+            const log1 = `Personaje 1 golpea y deja a Personaje 2 en ${vidaP2}`
+            logs.push(log1)
+
+            io.to(idBatalla).emit('turno', {
+                atacante: 'P1',
+                vidaRestante: vidaP2
+            })
 
             if(vidaP2 <= 0) break
 
+            await new Promise(res => setTimeout(res, 1500))
+
             //golpea p2
-            vidaP1 = Math.max(vidaP1 - p2.ataque)
-            logs.push(`Personaje 2 golpea y deja a Personaje 1 en ${Math.max(vidaP1, 0)}`)
+            vidaP1 = Math.max(vidaP1 - p2.ataque, 0)
+
+            const log2 = `Personaje 2 golpea y deja a Personaje 1 en ${vidaP1}`
+            logs.push(log2)
+
+            io.to(idBatalla).emit('turno', {
+                atacante: 'P2',
+                vidaRestante: vidaP1
+            })
         }
 
         //validamos ganador
@@ -103,6 +132,10 @@ export class BatallaService {
         } else {
             await this.usuarioService.addExperiencia(batalla.usuario2.toString(), 10)
         }
+
+        io.to(idBatalla).emit('fin-batalla', {
+            ganador
+        })
 
         return batalla
     }

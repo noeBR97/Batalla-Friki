@@ -25,10 +25,27 @@ export class BatallaSocketGateway {
     console.log(`Cliente desconectado: ${client.id}`)
   }
 
+  salas: Record<string, number> = {}
   @SubscribeMessage('unirse-batalla')
   async handleUnirse(@MessageBody() idBatalla: string, @ConnectedSocket() client: Socket) {
     client.join(idBatalla)
-    return {msg: 'Unido a batalla'}
+
+    const sala = this.io.sockets.adapter.rooms.get(idBatalla)
+    const cantidad = sala ? sala.size : 0
+
+    console.log(`Cliente ${client.id} unido a ${idBatalla}. Jugadores en sala: ${cantidad}`)
+
+    this.io.to(idBatalla).emit('estado-sala', {
+      jugadoresConectados: cantidad
+    })
+
+    if(cantidad === 2) {
+      console.log(`Iniciando batalla ${idBatalla}`)
+
+      this.io.to(idBatalla).emit('jugador-unido')
+
+      await this.batallaService.ejecutarBatallaTiempoReal(idBatalla, this.io)
+    }
   }
 
   @SubscribeMessage('iniciar-batalla')

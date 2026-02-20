@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, Patch, Put, Param, Delete, ParseIntPipe,ValidationPipe, UsePipes, HttpCode, HttpStatus, UseGuards } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Put, Param, Delete, ParseIntPipe,ValidationPipe, UsePipes, HttpCode, HttpStatus, UseGuards, Req } from '@nestjs/common';
 import { Validate } from 'class-validator';
 import { JwtAuthGuard } from '../auth/jwt.strategy/jwt-auth.guard';
 import { SetMetadata } from '@nestjs/common';
@@ -26,6 +26,12 @@ export class UsuariosController {
   @UsePipes(ValidationPipe)
   create(@Body() createUserDto: CreateUsuarioDto) {
     return this.usersService.create(createUserDto);
+  }
+
+  @Get('me')
+  @UseGuards(JwtAuthGuard)
+  getProfile(@Req() req) {
+    return this.usersService.findMe(req.user.sub)
   }
 
   @Get()

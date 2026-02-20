@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Batalla Friki</title>
+</head>
+<body>
+
+  <h1>Batalla Friki</h1>
+
+  <!-- REGISTRO -->
+  <div id="registro">
+    <h2>Registro</h2>
+    <input id="regNombre" placeholder="Nombre">
+    <input id="regEmail" placeholder="Email">
+    <input id="regPass" type="password" placeholder="Password">
+    <button id="btnRegister">Registrar</button>
+  </div>
+
+  <!-- LOGIN -->
+  <div id="login">
+    <h2>Login</h2>
+    <input id="loginEmail" placeholder="Email">
+    <input id="loginPass" type="password" placeholder="Password">
+    <button id="btnLogin">Login</button>
+  </div>
+
+  <!-- PANEL USUARIO -->
+  <div id="panel" style="display:none;">
+    <h2>Bienvenid@ <span id="nombreUsuario"></span></h2>
+
+    <p>
+      Nivel: <span id="nivelUsuario"></span> |
+      Experiencia: <span id="expUsuario"></span>
+    </p>
+
+    <h3>Personajes</h3>
+    <ul id="listaPersonajes"></ul>
+
+    <h3>Crear Batalla</h3>
+    <select id="oponenteSelect"></select>
+    <select id="personajeSelect"></select>
+    <button id="btnCrearBatalla">Crear Batalla</button>
+
+    <h3>Estado Batalla</h3>
+    <p id="estadoBatalla">Sin batalla</p>
+    <ul id="logs"></ul>
+  </div>
+
+  <h3>Batallas Disponibles</h3>
+  <ul id="listaBatallas"></ul>
+  <button id="btnRefrescarBatallas">Refrescar</button>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

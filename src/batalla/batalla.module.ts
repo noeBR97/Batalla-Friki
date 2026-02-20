@@ -17,6 +17,7 @@ import { AuthModule } from 'src/auth/auth.module';
     UsuariosModule,
     PersonajesModule,
     AuthModule,
-  ]
+  ],
+  exports: [BatallaService]
 })
 export class BatallaModule {}

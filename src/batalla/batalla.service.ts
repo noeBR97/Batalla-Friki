@@ -139,4 +139,8 @@ export class BatallaService {
 
         return batalla
     }
+
+    async findAllAbiertas() {
+        return this.batallaModel.find({ estado: 'EN PROGRESO' })
+    }
 }

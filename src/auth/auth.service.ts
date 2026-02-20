@@ -61,8 +61,10 @@ export class AuthService {
     async login(user: any) {
         try {
             const payload = { email: user.email, sub: user._id, role: user.role };
+            const { password, ...usuarioSinPass } = user.toObject ? user.toObject() : user
             return {
             access_token: this.jwtService.sign(payload),
+            user: usuarioSinPass
             };
         } catch (error) {
             throw new UnauthorizedException(error.message || 'Error al iniciar sesión')

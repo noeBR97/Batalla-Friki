@@ -32,7 +32,7 @@ export class UsuariosService {
   }
 
   findAll() {
-    return `This action returns all usuarios`;
+    return this.usuarioModel.find({}, '-password')
   }
 
   findOne(id: string) {
@@ -59,11 +59,22 @@ export class UsuariosService {
     //subida de nivel
     while(usuario.experiencia >= 100) {
       usuario.experiencia = usuario.experiencia - 100
-      usuario.nivel + 1
+      usuario.nivel = usuario.nivel + 1
     }
 
     await usuario.save()
 
     return usuario
+  }
+
+  async findMe(id: string) {
+    const usuario = await this.usuarioModel.findById(id)
+
+    if(!usuario) {
+      throw new NotFoundException('Usuario no encontrado')
+    }
+
+    const { password, ...result } = usuario.toObject()
+    return result
   }
 }

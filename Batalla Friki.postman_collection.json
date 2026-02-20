@@ -1,0 +1,366 @@
+{
+  "info": {
+    "_postman_id": "afe15298-92d4-4d6d-a88e-c952ce50f002",
+    "name": "Batalla Friki",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48599476"
+  },
+  "item": [
+    {
+      "name": "registro",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Noe\",\r\n  \"email\": \"noe@mail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"admin@mail.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "crear personaje",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxMzQzODE1LCJleHAiOjE3NzEzNDc0MTV9.TEKKBVJorVSNzfYiXWNk4rD0E96g0H9Pi5xqatx99JE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Navi\",\r\n  \"vida\": 200,\r\n  \"ataque\": 50,\r\n  \"nivel\": 20\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personajes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personajes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listar personajes",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxMzQzODE1LCJleHAiOjE3NzEzNDc0MTV9.TEKKBVJorVSNzfYiXWNk4rD0E96g0H9Pi5xqatx99JE",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Sauron\",\r\n  \"vida\": 150,\r\n  \"ataque\": 30,\r\n  \"nivel\": 5\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personajes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personajes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "buscar personaje",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxMzQ0MDQyLCJleHAiOjE3NzEzNDc2NDJ9.UTEs9W-JLabSR3A6tS9SYFkumhkiNPcn06A5GMzwd0s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personajes/69949027c9066b2a12332687",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personajes",
+            "69949027c9066b2a12332687"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "actualizar personaje",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxMzQ0MDQyLCJleHAiOjE3NzEzNDc2NDJ9.UTEs9W-JLabSR3A6tS9SYFkumhkiNPcn06A5GMzwd0s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vida\": 150,\r\n  \"ataque\": 40\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personajes/69949087c9066b2a1233268a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personajes",
+            "69949087c9066b2a1233268a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "borrar personaje",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxMzQ0MDQyLCJleHAiOjE3NzEzNDc2NDJ9.UTEs9W-JLabSR3A6tS9SYFkumhkiNPcn06A5GMzwd0s",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"vida\": 150,\r\n  \"ataque\": 40\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/personajes/69949087c9066b2a1233268a",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "personajes",
+            "69949087c9066b2a1233268a"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "empezar batalla",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxNDQyMjcwLCJleHAiOjE3NzE0NDU4NzB9.Ur8RWLOUtQh7g3nY0JonkJTVtLmaaRsOs1OT4N1rWIs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idUsuarioOponente\": \"69948d47c9066b2a1233267e\",\r\n  \"idPersonaje\": \"69960f6605c9bf980b0deb74\",\r\n  \"idPersonajeOponente\": \"69949027c9066b2a12332687\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/batalla/start",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "batalla",
+            "start"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "listar usuarios",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxNDQyMjcwLCJleHAiOjE3NzE0NDU4NzB9.Ur8RWLOUtQh7g3nY0JonkJTVtLmaaRsOs1OT4N1rWIs",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"idUsuarioOponente\": \"69948d47c9066b2a1233267e\",\r\n  \"idPersonaje\": \"69960f6605c9bf980b0deb74\",\r\n  \"idPersonajeOponente\": \"69949027c9066b2a12332687\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/users",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "buscar batallas abiertas",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQG1haWwuY29tIiwic3ViIjoiNjk5NDhmYTRjOTA2NmIyYTEyMzMyNjg0Iiwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzcxNjA5MzQyLCJleHAiOjE3NzE2MTI5NDJ9.2UjYXGvrAEgAu08Jo4wWm-fQgPfNkKv8YM1PX6un-hc",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/batalla",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "batalla"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

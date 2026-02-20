@@ -1,0 +1,249 @@
+[{
+  "_id": {
+    "$oid": "6996135c9e13cc7542478024"
+  },
+  "usuario1": {
+    "$oid": "69948fa4c9066b2a12332684"
+  },
+  "usuario2": {
+    "$oid": "69948d47c9066b2a1233267e"
+  },
+  "personaje1": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "personaje2": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "vida_actual_personaje1": -1,
+  "vida_actual_personaje2": 5,
+  "estado": "FINALIZADA",
+  "logs": [
+    "Personaje 1 golpea y deja a Personaje 2 en 15",
+    "Personaje 2 golpea y deja a Personaje 1 en 13",
+    "Personaje 1 golpea y deja a Personaje 2 en 10",
+    "Personaje 2 golpea y deja a Personaje 1 en 6",
+    "Personaje 1 golpea y deja a Personaje 2 en 5",
+    "Personaje 2 golpea y deja a Personaje 1 en 0"
+  ],
+  "ganador": {
+    "$oid": "69948d47c9066b2a1233267e"
+  }
+},
+{
+  "_id": {
+    "$oid": "69970b5ed80bf7b2e4b3d385"
+  },
+  "usuario1": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "usuario2": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "personaje1": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "personaje2": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "vida_actual_personaje1": 10,
+  "vida_actual_personaje2": 0,
+  "estado": "FINALIZADA",
+  "logs": [
+    "Personaje 1 golpea y deja a Personaje 2 en 13",
+    "Personaje 2 golpea y deja a Personaje 1 en 15",
+    "Personaje 1 golpea y deja a Personaje 2 en 6",
+    "Personaje 2 golpea y deja a Personaje 1 en 10",
+    "Personaje 1 golpea y deja a Personaje 2 en 0"
+  ],
+  "ganador": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  }
+},
+{
+  "_id": {
+    "$oid": "69988caff87b7072b29d153f"
+  },
+  "usuario1": {
+    "$oid": "69948fa4c9066b2a12332684"
+  },
+  "usuario2": {
+    "$oid": "69948d47c9066b2a1233267e"
+  },
+  "personaje1": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "personaje2": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "vida_actual_personaje1": 0,
+  "vida_actual_personaje2": 5,
+  "estado": "FINALIZADA",
+  "logs": [
+    "Personaje 1 golpea y deja a Personaje 2 en 15",
+    "Personaje 2 golpea y deja a Personaje 1 en 13",
+    "Personaje 1 golpea y deja a Personaje 2 en 10",
+    "Personaje 2 golpea y deja a Personaje 1 en 6",
+    "Personaje 1 golpea y deja a Personaje 2 en 5",
+    "Personaje 2 golpea y deja a Personaje 1 en 0"
+  ],
+  "ganador": {
+    "$oid": "69948d47c9066b2a1233267e"
+  }
+},
+{
+  "_id": {
+    "$oid": "69988d6b9b0b92aaebb32d4d"
+  },
+  "usuario1": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "usuario2": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "personaje1": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "personaje2": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "vida_actual_personaje1": 6,
+  "vida_actual_personaje2": 0,
+  "estado": "FINALIZADA",
+  "logs": [
+    "Personaje 1 golpea y deja a Personaje 2 en 13",
+    "Personaje 2 golpea y deja a Personaje 1 en 13",
+    "Personaje 1 golpea y deja a Personaje 2 en 6",
+    "Personaje 2 golpea y deja a Personaje 1 en 6",
+    "Personaje 1 golpea y deja a Personaje 2 en 0"
+  ],
+  "ganador": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  }
+},
+{
+  "_id": {
+    "$oid": "69988d739b0b92aaebb32d53"
+  },
+  "usuario1": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "usuario2": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "personaje1": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "personaje2": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "vida_actual_personaje1": 5,
+  "vida_actual_personaje2": 0,
+  "estado": "FINALIZADA",
+  "logs": [
+    "Personaje 1 golpea y deja a Personaje 2 en 15",
+    "Personaje 2 golpea y deja a Personaje 1 en 15",
+    "Personaje 1 golpea y deja a Personaje 2 en 10",
+    "Personaje 2 golpea y deja a Personaje 1 en 10",
+    "Personaje 1 golpea y deja a Personaje 2 en 5",
+    "Personaje 2 golpea y deja a Personaje 1 en 5",
+    "Personaje 1 golpea y deja a Personaje 2 en 0"
+  ],
+  "ganador": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  }
+},
+{
+  "_id": {
+    "$oid": "69988d799b0b92aaebb32d59"
+  },
+  "usuario1": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "usuario2": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "personaje1": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "personaje2": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "vida_actual_personaje1": 20,
+  "vida_actual_personaje2": 20,
+  "estado": "EN PROGRESO",
+  "logs": []
+},
+{
+  "_id": {
+    "$oid": "69988d7c9b0b92aaebb32d5f"
+  },
+  "usuario1": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "usuario2": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "personaje1": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "personaje2": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "vida_actual_personaje1": 20,
+  "vida_actual_personaje2": 20,
+  "estado": "EN PROGRESO",
+  "logs": []
+},
+{
+  "_id": {
+    "$oid": "69988d859b0b92aaebb32d65"
+  },
+  "usuario1": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "usuario2": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "personaje1": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "personaje2": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "vida_actual_personaje1": 20,
+  "vida_actual_personaje2": 20,
+  "estado": "EN PROGRESO",
+  "logs": []
+},
+{
+  "_id": {
+    "$oid": "69989769a9b393781cb05707"
+  },
+  "usuario1": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "usuario2": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "personaje1": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "personaje2": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "vida_actual_personaje1": 5,
+  "vida_actual_personaje2": 0,
+  "estado": "FINALIZADA",
+  "logs": [
+    "Personaje 1 golpea y deja a Personaje 2 en 15",
+    "Personaje 2 golpea y deja a Personaje 1 en 15",
+    "Personaje 1 golpea y deja a Personaje 2 en 10",
+    "Personaje 2 golpea y deja a Personaje 1 en 10",
+    "Personaje 1 golpea y deja a Personaje 2 en 5",
+    "Personaje 2 golpea y deja a Personaje 1 en 5",
+    "Personaje 1 golpea y deja a Personaje 2 en 0"
+  ],
+  "ganador": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  }
+}]

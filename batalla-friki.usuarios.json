@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "69948d47c9066b2a1233267e"
+  },
+  "nombre": "Navi",
+  "email": "navi@mail.com",
+  "password": "$2b$10$PIBUfeWSGwQ94wNRw7SgxOtKuLQ2uO4Rj9S31EWE.yDRjn3YP7lvm",
+  "nivel": 1,
+  "experiencia": 20,
+  "batallas_ganadas": 0,
+  "batallas_perdidas": 0,
+  "role": "USER"
+},
+{
+  "_id": {
+    "$oid": "69948fa4c9066b2a12332684"
+  },
+  "nombre": "Admin",
+  "email": "admin@mail.com",
+  "password": "$2b$10$bbdSBUcsN33h19JpTo4treYtYzDipQrrnYknOCg1Yq7gVtqqWCIku",
+  "nivel": 1,
+  "experiencia": 0,
+  "batallas_ganadas": 0,
+  "batallas_perdidas": 0,
+  "role": "ADMIN"
+},
+{
+  "_id": {
+    "$oid": "69970ab8d80bf7b2e4b3d37a"
+  },
+  "nombre": "Noelia",
+  "email": "noe@email.com",
+  "password": "$2b$10$A.dpAk3KIlW0CdDwaAuitOITpAh7mUevJgA24QbrHJkP.tMqC25Cy",
+  "nivel": 2,
+  "experiencia": 0,
+  "batallas_ganadas": 0,
+  "batallas_perdidas": 0,
+  "role": "USER"
+},
+{
+  "_id": {
+    "$oid": "69970afad80bf7b2e4b3d37e"
+  },
+  "nombre": "che",
+  "email": "che@email.com",
+  "password": "$2b$10$690DrtjNrkaMmWy6h4amLuuj90P2D4GiUtQFi0X77myJeGQdGnJui",
+  "nivel": 1,
+  "experiencia": 20,
+  "batallas_ganadas": 0,
+  "batallas_perdidas": 0,
+  "role": "USER"
+}]

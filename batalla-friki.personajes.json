@@ -1,0 +1,18 @@
+[{
+  "_id": {
+    "$oid": "69949027c9066b2a12332687"
+  },
+  "nombre": "Sauron",
+  "vida": 20,
+  "ataque": 7,
+  "nivel": 1
+},
+{
+  "_id": {
+    "$oid": "69960f6605c9bf980b0deb74"
+  },
+  "nombre": "Navi",
+  "vida": 20,
+  "ataque": 5,
+  "nivel": 1
+}]
